@@ -52,6 +52,12 @@ export default tseslint.config(
       'object-shorthand': 'error',
       'import/no-duplicates': 'error',
       'react/react-in-jsx-scope': 'off',
+      'padding-line-between-statements': [
+        'error',
+        { blankLine: 'always', prev: '*', next: 'return' },
+        { blankLine: 'always', prev: '*', next: 'block-like' },
+        { blankLine: 'always', prev: 'block-like', next: '*' },
+      ],
       '@typescript-eslint/consistent-type-imports': 'error',
       '@typescript-eslint/no-unused-vars': [
         'error',

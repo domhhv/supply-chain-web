@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router';
 
 import { HomePage, ItemDetailPage } from '@pages';
 
-function App() {
+const App = () => {
   return (
     <div className="h-full p-4">
       <BrowserRouter>
@@ -13,6 +13,6 @@ function App() {
       </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;

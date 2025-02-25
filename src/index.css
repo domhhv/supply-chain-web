@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply min-h-screen bg-gradient-to-b from-slate-500 via-slate-300 to-slate-200;
+    @apply min-h-screen bg-gradient-to-b from-slate-400 via-slate-200 to-slate-50;
   }
 }
 

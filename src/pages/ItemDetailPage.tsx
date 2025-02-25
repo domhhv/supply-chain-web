@@ -6,7 +6,7 @@ import { useParams } from 'react-router';
 import type { SupplyChainEvent } from '@models';
 import { getSupplyChainTrail } from '@services';
 
-function ItemDetailPage() {
+const ItemDetailPage = () => {
   const { id } = useParams<{ id: string }>();
   const [loading, setLoading] = React.useState(true);
   const [events, setEvents] = React.useState<SupplyChainEvent[]>([]);
@@ -14,12 +14,9 @@ function ItemDetailPage() {
   React.useEffect(() => {
     if (id) {
       getSupplyChainTrail(id)
-        .then((data) => {
-          setEvents(data);
-          setLoading(false);
-        })
-        .catch((error) => {
-          console.error(error);
+        .then(setEvents)
+        .catch(console.error)
+        .finally(() => {
           setLoading(false);
         });
     }
@@ -56,6 +53,6 @@ function ItemDetailPage() {
       )}
     </div>
   );
-}
+};
 
 export default ItemDetailPage;

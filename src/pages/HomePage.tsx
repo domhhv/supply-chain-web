@@ -37,6 +37,7 @@ const HomePage = () => {
         <Button
           fullWidth
           color="primary"
+          type="submit"
           startContent={<MagnifyingGlass size={20} />}
         >
           Search

@@ -5,22 +5,22 @@ import { MagnifyingGlass } from '@phosphor-icons/react';
 import React, { type ChangeEventHandler, type FormEventHandler } from 'react';
 
 const HomePage = () => {
-  const [itemName, setItemName] = React.useState('');
+  const [itemId, setItemId] = React.useState('');
 
-  const handleItemNameChange: ChangeEventHandler<HTMLInputElement> = (e) => {
-    setItemName(e.target.value);
+  const handleItemIdChange: ChangeEventHandler<HTMLInputElement> = (e) => {
+    setItemId(e.target.value);
   };
 
   const handleSearch: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
 
-    if (itemName.trim()) {
-      window.alert(`Searching for item ${itemName}`);
+    if (itemId.trim()) {
+      window.alert(`Searching for item ${itemId}`);
     }
   };
 
   const handleClear = () => {
-    setItemName('');
+    setItemId('');
   };
 
   return (
@@ -29,9 +29,9 @@ const HomePage = () => {
       <Form onSubmit={handleSearch} className="space-y-2">
         <Input
           isClearable
-          value={itemName}
-          placeholder="Enter item name"
-          onChange={handleItemNameChange}
+          value={itemId}
+          placeholder="Enter Item ID"
+          onChange={handleItemIdChange}
           onClear={handleClear}
         />
         <Button

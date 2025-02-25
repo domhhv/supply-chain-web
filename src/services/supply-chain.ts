@@ -1,6 +1,7 @@
 import { httpClient } from './http';
 
 export const getItems = async () => {
+  await new Promise((resolve) => setTimeout(resolve, 3000));
   const response = await httpClient.get('/supply-chain/items');
 
   return response.data;

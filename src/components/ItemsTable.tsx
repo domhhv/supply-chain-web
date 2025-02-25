@@ -1,4 +1,5 @@
 import { Button } from '@heroui/button';
+import { CircularProgress } from '@heroui/progress';
 import {
   Table,
   TableBody,
@@ -16,9 +17,18 @@ import { getLastEvent } from '@services';
 
 type ItemsTableProps = {
   items: SupplyChainItem[];
+  isLoading: boolean;
 };
 
-const ItemsTable = ({ items }: ItemsTableProps) => {
+const ItemsTable = ({ items, isLoading }: ItemsTableProps) => {
+  if (isLoading) {
+    return (
+      <div className="flex h-20 items-center justify-center">
+        <CircularProgress />
+      </div>
+    );
+  }
+
   const handleCopy = (id: string) => {
     navigator.clipboard.writeText(id);
   };

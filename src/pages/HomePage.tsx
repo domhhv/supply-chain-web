@@ -13,9 +13,14 @@ const HomePage = () => {
   const navigate = useNavigate();
   const [itemId, setItemId] = React.useState('');
   const [items, setItems] = React.useState<SupplyChainItem[]>([]);
+  const [isLoadingItems, setIsLoadingItems] = React.useState(true);
 
   React.useEffect(() => {
-    getItems().then(setItems);
+    getItems()
+      .then(setItems)
+      .finally(() => {
+        setIsLoadingItems(false);
+      });
   }, []);
 
   const handleItemIdChange: ChangeEventHandler<HTMLInputElement> = (e) => {
@@ -57,7 +62,7 @@ const HomePage = () => {
       </Form>
 
       <h2 className="mb-4 text-xl font-semibold">All Supply Chain Items</h2>
-      <ItemsTable items={items} />
+      <ItemsTable items={items} isLoading={isLoadingItems} />
     </div>
   );
 };

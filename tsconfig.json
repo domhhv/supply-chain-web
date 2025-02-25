@@ -19,7 +19,8 @@
     "baseUrl": "./src",
     "paths": {
       "@pages": ["pages"],
-      "@services": ["services"]
+      "@services": ["services"],
+      "@models": ["models"]
     }
   },
   "include": ["src"]

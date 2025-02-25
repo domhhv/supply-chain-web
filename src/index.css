@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply min-h-screen bg-gradient-to-b from-slate-500 via-slate-300 to-slate-200;
+  }
+}
+
 div[data-overlay-container='true'] {
   height: 100%;
 }

@@ -20,7 +20,8 @@
     "paths": {
       "@pages": ["pages"],
       "@services": ["services"],
-      "@models": ["models"]
+      "@models": ["models"],
+      "@components": ["components"]
     }
   },
   "include": ["src"]

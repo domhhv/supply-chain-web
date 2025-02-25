@@ -16,6 +16,7 @@ export default defineConfig(({ mode }) => {
         '@pages': resolve(__dirname, './src/pages'),
         '@services': resolve(__dirname, './src/services'),
         '@models': resolve(__dirname, './src/models'),
+        '@components': resolve(__dirname, './src/components'),
       },
     },
   } satisfies UserConfig;

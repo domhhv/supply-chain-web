@@ -9,12 +9,13 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react()],
     define: {
-      API_BASE_URL: JSON.stringify(env.SUPABASE_URL),
+      API_BASE_URL: JSON.stringify(env.API_BASE_URL),
     },
     resolve: {
       alias: {
         '@pages': resolve(__dirname, './src/pages'),
         '@services': resolve(__dirname, './src/services'),
+        '@models': resolve(__dirname, './src/models'),
       },
     },
   } satisfies UserConfig;

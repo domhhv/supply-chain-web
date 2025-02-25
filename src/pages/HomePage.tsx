@@ -3,8 +3,10 @@ import { Form } from '@heroui/form';
 import { Input } from '@heroui/input';
 import { MagnifyingGlass } from '@phosphor-icons/react';
 import React, { type ChangeEventHandler, type FormEventHandler } from 'react';
+import { useNavigate } from 'react-router';
 
 const HomePage = () => {
+  const navigate = useNavigate();
   const [itemId, setItemId] = React.useState('');
 
   const handleItemIdChange: ChangeEventHandler<HTMLInputElement> = (e) => {
@@ -15,7 +17,7 @@ const HomePage = () => {
     e.preventDefault();
 
     if (itemId.trim()) {
-      window.alert(`Searching for item ${itemId}`);
+      navigate(`/item/${itemId.trim()}`);
     }
   };
 

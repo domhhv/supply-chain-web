@@ -24,7 +24,7 @@ const HomePage = () => {
   };
 
   return (
-    <div className="flex h-screen flex-col items-center justify-center p-4">
+    <div className="flex h-full flex-col items-center justify-center p-4">
       <h1 className="mb-4 text-3xl font-bold">Supply Chain Tracker</h1>
       <Form onSubmit={handleSearch} className="space-y-2">
         <Input

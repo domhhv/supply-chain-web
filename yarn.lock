@@ -459,7 +459,7 @@
   resolved "https://registry.yarnpkg.com/@heroui/dom-animation/-/dom-animation-2.1.5.tgz#bfdd8248e41e98a41af8803e13ca4da240a9241a"
   integrity sha512-OhPzHMw0bH5RM218CdWH2XspoTQ4rzg70+9QrnCrO8PIIWamjV3tazLk67vbTvJzh4TvulsHFoQO/bjvJnMS6w==
 
-"@heroui/form@2.1.12":
+"@heroui/form@2.1.12", "@heroui/form@^2.1.12":
   version "2.1.12"
   resolved "https://registry.yarnpkg.com/@heroui/form/-/form-2.1.12.tgz#4a7acea082e42d910398de006646757895a276d3"
   integrity sha512-OYmc3Z85t/hYDuSFnHwfUdJPUzp19u/3lHBXlmnx5N4865rACbCw6JZWM4r3cxRIBB7l8Ignw0Xzpr20vMRXnQ==

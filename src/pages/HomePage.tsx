@@ -1,34 +1,47 @@
 import { Button } from '@heroui/button';
+import { Form } from '@heroui/form';
 import { Input } from '@heroui/input';
 import { MagnifyingGlass } from '@phosphor-icons/react';
-import React from 'react';
+import React, { type ChangeEventHandler, type FormEventHandler } from 'react';
 
 const HomePage = () => {
-  const [itemId, setItemId] = React.useState('');
+  const [itemName, setItemName] = React.useState('');
 
-  const handleSearch = () => {
-    if (itemId.trim()) {
-      window.alert(`Searching for item ${itemId}`);
+  const handleItemNameChange: ChangeEventHandler<HTMLInputElement> = (e) => {
+    setItemName(e.target.value);
+  };
+
+  const handleSearch: FormEventHandler<HTMLFormElement> = (e) => {
+    e.preventDefault();
+
+    if (itemName.trim()) {
+      window.alert(`Searching for item ${itemName}`);
     }
+  };
+
+  const handleClear = () => {
+    setItemName('');
   };
 
   return (
     <div className="flex h-screen flex-col items-center justify-center p-4">
       <h1 className="mb-4 text-3xl font-bold">Supply Chain Tracker</h1>
-      <div className="flex space-x-2">
+      <Form onSubmit={handleSearch} className="space-y-2">
         <Input
           isClearable
-          placeholder="Enter Item ID"
-          value={itemId}
-          onChange={(e) => setItemId(e.target.value)}
+          value={itemName}
+          placeholder="Enter item name"
+          onChange={handleItemNameChange}
+          onClear={handleClear}
         />
         <Button
+          fullWidth
+          color="primary"
           startContent={<MagnifyingGlass size={20} />}
-          onPress={handleSearch}
         >
           Search
         </Button>
-      </div>
+      </Form>
     </div>
   );
 };
